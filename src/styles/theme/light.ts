@@ -26,6 +26,8 @@ export const light = createTheme({
     },
     background: {
       default: "#dae6f0",
+      paper: "#eef2f1",
+      contrast: "#ffffff",
     },
   },
 });

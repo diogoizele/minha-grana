@@ -7,5 +7,13 @@ declare module "@mui/material" {
     palette: ThemePalette;
   }
 
-  interface ThemeOptions extends Partial<Theme> {}
+  interface ThemeOptions extends Partial<Theme.Theme> {
+    palette?: ThemePalette;
+  }
+}
+
+declare module "@mui/material/styles/createPalette" {
+  interface TypeBackground {
+    contrast: string;
+  }
 }

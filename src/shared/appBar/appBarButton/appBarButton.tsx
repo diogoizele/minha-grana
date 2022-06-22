@@ -1,4 +1,5 @@
 import { Typography, useTheme } from "@mui/material";
+import { Navigate } from "react-router-dom";
 import {
   Container,
   IconContainer,
@@ -15,15 +16,18 @@ export function AppBarButton({
   icon: Icon,
   isOpen,
   isActive,
+  path,
   onChangeTab,
 }: AppBarButtonProps) {
-  const { color } = useAppBarButton({ isActive });
+  const { color, handleNavigate } = useAppBarButton({
+    isActive,
+    path,
+    title,
+    onChangeTab,
+  });
+
   return (
-    <Container
-      isActive={isActive}
-      isOpen={isOpen}
-      onClick={() => onChangeTab(title)}
-    >
+    <Container isActive={isActive} isOpen={isOpen} onClick={handleNavigate}>
       <RoundedTop isActive={isActive}>
         <div />
       </RoundedTop>

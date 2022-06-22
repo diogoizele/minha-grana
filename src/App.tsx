@@ -1,12 +1,17 @@
-import { useState } from "react";
+import { BrowserRouter } from "react-router-dom";
+
+import { Router } from "routes/router";
+import { GlobalStyles } from "styles/globalStyles";
+import { ThemeProvider } from "styles/theme/themeProvider";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div>
-      <h1>Minha Grana </h1>
-    </div>
+    <ThemeProvider>
+      <BrowserRouter>
+        <GlobalStyles />
+        <Router />
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

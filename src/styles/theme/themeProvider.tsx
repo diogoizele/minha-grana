@@ -21,7 +21,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
       h2: { fontSize: "2.5rem" },
       h3: { fontSize: "2.25rem" },
       h4: { fontSize: "2rem" },
-      h5: { fontSize: "1.875rem" },
+      h5: { fontSize: "1.6rem" },
       h6: { fontSize: "1.4rem" },
     },
   });

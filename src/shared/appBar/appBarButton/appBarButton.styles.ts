@@ -18,8 +18,8 @@ export const Container = styled("div")<ContainerProps>(
 
     border: 0,
 
-    borderTopLeftRadius: "3rem",
-    borderBottomLeftRadius: "3rem",
+    borderTopLeftRadius: "1.2rem",
+    borderBottomLeftRadius: "1.2rem",
     marginLeft: "1rem",
 
     transition: "180ms",

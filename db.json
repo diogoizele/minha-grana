@@ -1,0 +1,100 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "title": "Mercado",
+      "amount": 180,
+      "type": 2,
+      "frequency": 2,
+      "amountType": 1
+    },
+    {
+      "id": 2,
+      "title": "Moto",
+      "amount": 1000,
+      "type": 2,
+      "frequency": 2,
+      "amountType": 1
+    },
+    {
+      "id": 3,
+      "title": "Investimentos",
+      "amount": 200,
+      "type": 2,
+      "frequency": 2,
+      "amountType": 1
+    },
+    {
+      "id": 4,
+      "title": "Reserva de Emergência",
+      "amount": 200,
+      "type": 2,
+      "frequency": 1,
+      "amountType": 1
+    },
+    {
+      "id": 5,
+      "title": "Spotify",
+      "amount": 35,
+      "type": 2,
+      "frequency": 3,
+      "amountType": 1
+    },
+    {
+      "id": 6,
+      "title": "Salário",
+      "amount": 1000,
+      "type": 1,
+      "frequency": 7,
+      "amountType": 1
+    },
+    {
+      "id": 7,
+      "title": "Notebook",
+      "amount": 610,
+      "type": 2,
+      "frequency": 6,
+      "amountType": 1
+    },
+    {
+      "id": 8,
+      "title": "Pagamento Tio André",
+      "amount": 15,
+      "type": 1,
+      "frequency": 5,
+      "amountType": 1
+    },
+    {
+      "id": 9,
+      "title": "Pagamento Tio André",
+      "amount": 15,
+      "type": 1,
+      "frequency": 4,
+      "amountType": 1
+    },
+    {
+      "id": 10,
+      "title": "Recibo 1",
+      "amount": 15,
+      "type": 1,
+      "frequency": 2,
+      "amountType": 2
+    },
+    {
+      "id": 11,
+      "title": "Despesa 2",
+      "amount": 20,
+      "type": 2,
+      "frequency": 2,
+      "amountType": 2
+    },
+    {
+      "id": 12,
+      "title": "Receita 1",
+      "amount": 25,
+      "type": 1,
+      "frequency": 2,
+      "amountType": 2
+    }
+  ]
+}

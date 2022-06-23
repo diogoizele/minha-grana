@@ -3,7 +3,7 @@ import { Category, CategoryType } from "containers/categories/categories.types";
 
 type GetCategoryParams = {
   order?: "asc" | "desc";
-  sort?: keyof Category;
+  sort?: keyof Category | null;
   type?: CategoryType | null;
 };
 

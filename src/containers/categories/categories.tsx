@@ -1,11 +1,11 @@
-import { CircularProgress, Typography } from "@mui/material";
+import { Button, CircularProgress, Typography } from "@mui/material";
 
 import errorImg from "assets/error-image.png";
 
 import { Content } from "components/content/content";
 
 import { List } from "./categories.styles";
-import { CategoriesFilter } from "./categoriesFilter/categoriesFilter";
+import { CategoriesFilters } from "./categoriesFilters/categoriesFilters";
 import { CategoryCard } from "./categoryCard/categoryCard";
 import { useCategories } from "./useCategories";
 
@@ -15,7 +15,12 @@ export function Categories() {
     hasError,
     isLoading,
     categoriesFilter,
+    categoriesOrder,
+    categoriesOrderType,
     handleFilterCategory,
+    handleOrderCategory,
+    handleToggleCategoriesOrderType,
+    handleReloadPage,
   } = useCategories();
 
   return (
@@ -29,9 +34,10 @@ export function Categories() {
         </div>
       )}
       {hasError && (
-        <div className="flex flex-col gap-8 w-screen justify-center items-center">
+        <div className="flex flex-col gap-4 w-screen justify-center items-center">
           <img src={errorImg} style={{ height: "256px" }} />
           <Typography
+            style={{ textAlign: "center" }}
             variant="subtitle1"
             fontSize={20}
             fontWeight={600}
@@ -39,13 +45,20 @@ export function Categories() {
           >
             Ops! ocorreu um erro ao tentar buscar suas categorias...
           </Typography>
+          <Button onClick={handleReloadPage} variant="outlined">
+            Atualizar página
+          </Button>
         </div>
       )}
       {!hasError && !isLoading && (
         <div className="w-screen flex flex-col">
-          <CategoriesFilter
+          <CategoriesFilters
             category={categoriesFilter}
+            order={categoriesOrder}
+            orderType={categoriesOrderType}
+            onOrderBy={handleOrderCategory}
             onFilterCategory={handleFilterCategory}
+            onToggleOrderType={handleToggleCategoriesOrderType}
           />
 
           <List>

@@ -9,7 +9,7 @@ export const light = createTheme({
       main: "#af3551",
     },
     info: {
-      main: "#528e73",
+      main: "#F48A2D",
     },
     success: {
       main: "#2c9564",
@@ -28,6 +28,11 @@ export const light = createTheme({
       default: "#dae6f0",
       paper: "#eef2f1",
       contrast: "#ffffff",
+    },
+  },
+  typography: {
+    allVariants: {
+      color: "#232323",
     },
   },
 });

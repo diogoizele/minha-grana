@@ -1,7 +1,7 @@
 import { styled } from "@mui/material";
 
 export const Container = styled("header")(({ theme }) => ({
-  height: "2.3rem",
+  minHeight: "2.3rem",
   marginBottom: "1rem",
 
   backgroundColor: theme.palette.background.contrast,

@@ -1,8 +1,9 @@
-import { Button, CircularProgress, Typography } from "@mui/material";
+import { Box, Button, CircularProgress, Typography } from "@mui/material";
 
 import errorImg from "assets/error-image.png";
 
 import { Content } from "components/content/content";
+import Modal from "components/modal/modal";
 
 import { List } from "./categories.styles";
 import { CategoriesFilters } from "./categoriesFilters/categoriesFilters";
@@ -17,16 +18,23 @@ export function Categories() {
     categoriesFilter,
     categoriesOrder,
     categoriesOrderType,
+    newCategoryModalIsOpen,
     handleFilterCategory,
     handleOrderCategory,
     handleToggleCategoriesOrderType,
     handleReloadPage,
+    handleCloseNewCategoryModal,
+    handleOpenNewCategoryModal,
   } = useCategories();
 
   return (
     <Content
       title="Categorias"
-      primaryAction={{ children: "Nova Categoria", variant: "contained" }}
+      primaryAction={{
+        children: "Nova Categoria",
+        variant: "contained",
+        onClick: handleOpenNewCategoryModal,
+      }}
     >
       {isLoading && (
         <div className="flex w-screen justify-center items-center">
@@ -68,6 +76,12 @@ export function Categories() {
           </List>
         </div>
       )}
+      <Modal
+        open={newCategoryModalIsOpen}
+        onClose={handleCloseNewCategoryModal}
+      >
+        <h1>Uepa</h1>
+      </Modal>
     </Content>
   );
 }

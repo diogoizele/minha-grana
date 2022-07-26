@@ -2,7 +2,12 @@ import { useEffect, useState } from "react";
 
 import * as categoryApi from "api/categories/categories";
 
-import type { Category, CategoryType } from "./categories.types";
+import type {
+  Category,
+  CategoryOrderSortType,
+  CategoryOrderValues,
+  CategoryType,
+} from "./categories.types";
 
 export function useCategories() {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -11,19 +16,25 @@ export function useCategories() {
   const [categoriesFilter, setCategoriesFilter] = useState<CategoryType | null>(
     null
   );
-  const [categoriesOrder, setCategoriesOrder] = useState<
-    "type" | "amount" | "amountType" | "frequency" | null
-  >(null);
-  const [categoriesOrderType, setCategoriesOrderType] = useState<
-    "asc" | "desc"
-  >("asc");
+  const [categoriesOrder, setCategoriesOrder] =
+    useState<CategoryOrderValues>(null);
+  const [categoriesOrderType, setCategoriesOrderType] =
+    useState<CategoryOrderSortType>("asc");
+  const [newCategoryModalIsOpen, setNewCategoryModalIsOpen] = useState(false);
+
+  const handleOpenNewCategoryModal = () => {
+    setNewCategoryModalIsOpen(true);
+  };
+
+  const handleCloseNewCategoryModal = () => {
+    setNewCategoryModalIsOpen(false);
+  };
 
   const handleFilterCategory = (category: CategoryType | null) =>
     setCategoriesFilter(category);
 
-  const handleOrderCategory = (
-    order: "type" | "amount" | "amountType" | "frequency" | null
-  ) => setCategoriesOrder(order);
+  const handleOrderCategory = (order: CategoryOrderValues) =>
+    setCategoriesOrder(order);
 
   const handleToggleCategoriesOrderType = () => {
     setCategoriesOrderType((currentType) =>
@@ -66,9 +77,12 @@ export function useCategories() {
     categoriesFilter,
     categoriesOrder,
     categoriesOrderType,
+    newCategoryModalIsOpen,
     handleFilterCategory,
     handleOrderCategory,
     handleToggleCategoriesOrderType,
     handleReloadPage,
+    handleOpenNewCategoryModal,
+    handleCloseNewCategoryModal,
   };
 }

@@ -22,8 +22,6 @@ export const Container = styled("div")<ContainerProps>(
     borderBottomLeftRadius: "1.2rem",
     marginLeft: "1rem",
 
-    transition: "180ms",
-
     cursor: "pointer",
     userSelect: "none",
   })
@@ -57,8 +55,6 @@ export const RoundedTop = styled("div")<RoundedTopProps>(
     right: "8px",
     top: "-16px",
 
-    transition: "180ms",
-
     "& > div": {
       backgroundColor: theme.palette.primary.main,
 
@@ -70,7 +66,6 @@ export const RoundedTop = styled("div")<RoundedTopProps>(
       right: 0,
 
       borderBottomRightRadius: "10rem",
-      transition: "180ms",
     },
   })
 );
@@ -87,8 +82,6 @@ export const RoundedBottom = styled("div")<RoundedTopProps>(
     right: "8px",
     bottom: "-16px",
 
-    transition: "180ms",
-
     "& > div": {
       backgroundColor: theme.palette.primary.main,
 
@@ -100,7 +93,6 @@ export const RoundedBottom = styled("div")<RoundedTopProps>(
       right: 0,
 
       borderTopRightRadius: "10rem",
-      transition: "180ms",
     },
   })
 );

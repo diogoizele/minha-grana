@@ -1,7 +1,7 @@
 import { createStyles, GlobalStyles as MUIGlobalStyles } from "@mui/material";
 
 export function GlobalStyles() {
-  const styles = createStyles`
+  const styles: string = createStyles`
       * {
          margin: 0;
          padding: 0;
@@ -18,5 +18,5 @@ export function GlobalStyles() {
       }
    `;
 
-  return <MUIGlobalStyles styles={styles} />;
+  return <MUIGlobalStyles styles={String(styles)} />;
 }

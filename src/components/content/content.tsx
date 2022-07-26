@@ -4,12 +4,12 @@ import { Container, ContainerHeader, PaperContainer } from "./content.styles";
 
 import type { ContentProps } from "./content.types";
 
-export function Content({
+const Content = ({
   children,
   headerElement,
   title,
   primaryAction,
-}: ContentProps) {
+}: ContentProps) => {
   return (
     <Container>
       <ContainerHeader>
@@ -18,11 +18,13 @@ export function Content({
         ) : (
           <div className="flex justify-between w-screen">
             <Typography variant="h3">{title}</Typography>
-            <Button {...primaryAction}  />
+            <Button {...primaryAction} />
           </div>
         )}
       </ContainerHeader>
       <PaperContainer elevation={4}>{children}</PaperContainer>
     </Container>
   );
-}
+};
+
+export default Content;

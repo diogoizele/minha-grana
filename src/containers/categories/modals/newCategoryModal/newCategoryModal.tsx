@@ -1,5 +1,7 @@
-import { Button, TextField, Typography } from "@mui/material";
-import { Controller, useForm } from "react-hook-form";
+import { Button, Divider, Typography } from "@mui/material";
+import TextField from "components/textField/textField";
+import { useForm } from "react-hook-form";
+import { StyledForm } from "./newCategoryModal.styles";
 
 import useNewCategoryModal from "./useNewCategoryModal";
 
@@ -25,20 +27,23 @@ const NewCategoryModal = () => {
   });
   const { handleSubmit } = useNewCategoryModal();
 
-
   return (
-    <div>
-      <Typography variant="h5">Nova categoria</Typography>
-      <form onSubmit={RHFHandleSubmit(handleSubmit)}>
-        <Controller
+    <div className="flex flex-col justify-between items-center">
+      <Typography className="self-start" variant="h5">
+        Nova categoria
+      </Typography>
+      <Divider className="py-1" />
+      <StyledForm onSubmit={RHFHandleSubmit(handleSubmit)}>
+        <TextField
+          label="Título"
           name={NEW_CATEGORY_FIELDS.TITLE}
           control={control}
-          render={({ field }) => <TextField size="small" {...field} />}
+          fullWidth
         />
         <Button type="submit" variant="contained">
           Criar
         </Button>
-      </form>
+      </StyledForm>
     </div>
   );
 };

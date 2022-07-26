@@ -26,3 +26,12 @@ export interface Category {
   frequency: CategoryFrequency;
   amountType: CategoryAmountType;
 }
+
+export type CategoryOrderValues =
+  | "type"
+  | "amount"
+  | "amountType"
+  | "frequency"
+  | null;
+
+export type CategoryOrderSortType = "asc" | "desc";

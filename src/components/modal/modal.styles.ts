@@ -18,6 +18,7 @@ export const Box = styled(MUIBox)<StyledBoxProps>(
     height: fullHeight ? "80vh" : "auto",
     minHeight: "20rem",
     width: widthSize,
+    maxWidth: "90%",
 
     background: theme?.palette?.background?.paper,
     padding: "1rem",

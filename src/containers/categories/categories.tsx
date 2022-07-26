@@ -2,13 +2,15 @@ import { Box, Button, CircularProgress, Typography } from "@mui/material";
 
 import errorImg from "assets/error-image.png";
 
-import { Content } from "components/content/content";
+import Content from "components/content/content";
 import Modal from "components/modal/modal";
 
 import { List } from "./categories.styles";
 import { CategoriesFilters } from "./categoriesFilters/categoriesFilters";
 import { CategoryCard } from "./categoryCard/categoryCard";
 import { useCategories } from "./useCategories";
+
+import NewCategoryModal from "./modals/newCategoryModal/newCategoryModal";
 
 export function Categories() {
   const {
@@ -80,7 +82,7 @@ export function Categories() {
         open={newCategoryModalIsOpen}
         onClose={handleCloseNewCategoryModal}
       >
-        <h1>Uepa</h1>
+        <NewCategoryModal />
       </Modal>
     </Content>
   );

@@ -1,18 +1,26 @@
-import { Categories } from "containers/categories/categories";
+import { useMemo } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { Layout } from "./layout/layout";
-import { LoginScreen } from "../screens";
+import { Layout } from "containers";
+import { useAuthStore } from "stores";
+import { LocalStorageKeys } from "constants";
+import { HomeScreen, LoginScreen } from "screens";
 
 export const Router = () => {
-  const authenticated = false;
+  const { token } = useAuthStore();
+
+  const isAuthenticated = useMemo(() => {
+    const storedToken = localStorage.getItem(LocalStorageKeys.TOKEN);
+
+    return !!token || !!storedToken;
+  }, []);
 
   return (
     <Routes>
-      {authenticated ? (
+      {isAuthenticated ? (
         <Route element={<Layout />}>
-          <Route index element={<h1>Dashboard</h1>} />
-          <Route path="/categories" element={<Categories />} />
+          <Route index element={<HomeScreen />} />
+          <Route path="/categories" element={<div>Categorias</div>} />
           <Route path="/purchases" element={<h1>Compras</h1>} />
         </Route>
       ) : (

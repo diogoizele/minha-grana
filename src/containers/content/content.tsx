@@ -4,7 +4,7 @@ import { Container, ContainerHeader, PaperContainer } from "./content.styles";
 
 import type { ContentProps } from "./content.types";
 
-const Content = ({
+export const Content = ({
   children,
   headerElement,
   title,
@@ -26,5 +26,3 @@ const Content = ({
     </Container>
   );
 };
-
-export default Content;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import { AppBar } from "shared/appBar/appBar";
-import { TopBar } from "shared/topBar/topBar";
+
+import { AppBar, TopBar } from "containers";
 
 import { Container, Content } from "./layout.styles";
 

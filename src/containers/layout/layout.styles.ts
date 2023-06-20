@@ -18,7 +18,7 @@ export const Content = styled("main")<ContentProps>(({ isOpen }) => ({
   flexDirection: "column",
 
   marginLeft: isOpen ? "14.8rem" : "4.8rem",
-  padding: "1rem",
+  padding: "0.8rem",
 
   transition: "margin-left 180ms",
 }));

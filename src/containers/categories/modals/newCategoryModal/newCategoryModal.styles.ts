@@ -8,6 +8,5 @@ export const StyledForm = styled("form")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-gap:"1rem"
-
+  gap: "1rem",
 }));

@@ -13,9 +13,7 @@ export const Container = styled("section")(() => ({
 export const PaperContainer = styled(Paper)(() => ({
   flexGrow: 1,
   display: "flex",
-  overflow: "hidden"
-
-  
+  overflow: "hidden",
 }));
 
 export const ContainerHeader = styled("header")(() => ({

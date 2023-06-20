@@ -1,5 +1,5 @@
 import type { ButtonProps } from "@mui/material";
-import type { ReactElement, ReactNode } from "react";
+import type { ReactNode } from "react";
 
 export type ContentProps = {
   children: ReactNode;

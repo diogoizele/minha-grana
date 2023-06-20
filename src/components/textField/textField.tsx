@@ -1,4 +1,4 @@
-import { FormControl, FormLabel, Typography } from "@mui/material";
+import { InputLabel, Typography } from "@mui/material";
 import { Controller } from "react-hook-form";
 
 import { StyledFormControl, StyledTextField } from "./textField.styles";
@@ -10,21 +10,22 @@ const TextField = ({
   control,
   size = "small",
   fullWidth,
+
   ...textFieldProps
 }: TextFieldProps) => {
   return (
     <StyledFormControl fullWidth={fullWidth}>
-      <FormLabel htmlFor={name}>
+      {/* <InputLabel htmlFor={name}>
         <Typography>{label}</Typography>
-      </FormLabel>
+      </InputLabel> */}
       <Controller
         name={name}
         control={control}
         render={({ field }) => (
           <StyledTextField
             id={name}
+            label={label}
             size={size}
-            // fullWidth={fullWidth}
             {...textFieldProps}
             {...field}
           />

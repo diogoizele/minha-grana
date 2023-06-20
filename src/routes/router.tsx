@@ -2,9 +2,10 @@ import { Categories } from "containers/categories/categories";
 import { Route, Routes } from "react-router-dom";
 
 import { Layout } from "./layout/layout";
+import { LoginScreen } from "../screens";
 
 export const Router = () => {
-  const authenticated = true;
+  const authenticated = false;
 
   return (
     <Routes>
@@ -15,9 +16,7 @@ export const Router = () => {
           <Route path="/purchases" element={<h1>Compras</h1>} />
         </Route>
       ) : (
-        <>
-          <Route element={<h1>Não autenticado</h1>} />
-        </>
+        <Route index element={<LoginScreen />} />
       )}
     </Routes>
   );

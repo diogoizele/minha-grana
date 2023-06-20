@@ -1,8 +1,12 @@
-import { TextFieldProps as MUITextFieldProps } from "@mui/material";
-import { UseFormReturn } from "react-hook-form";
+import {
+  TextFieldProps as MUITextFieldProps,
+  TextFieldVariants,
+} from "@mui/material";
+import { Control } from "react-hook-form";
 
 export type TextFieldProps = MUITextFieldProps & {
   name: string;
   label?: string;
-  control: UseFormReturn["control"];
+  control: Control<any>;
+  variant?: TextFieldVariants;
 };

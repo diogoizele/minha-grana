@@ -13,7 +13,7 @@ export const Router = () => {
     const storedToken = localStorage.getItem(LocalStorageKeys.TOKEN);
 
     return !!token || !!storedToken;
-  }, []);
+  }, [token]);
 
   return (
     <Routes>

@@ -1,7 +1,8 @@
 import { api } from "api";
 import { ApiEndpoints, LocalStorageKeys } from "constants";
 
-import { ApiLoginResponse, LoginCredentials } from "types";
+import { ApiLoginResponse, ErrorResponse, LoginCredentials } from "types";
+import { getGeneralApiError } from "../../util";
 
 const login = async (form: LoginCredentials) => {
   try {
@@ -12,7 +13,7 @@ const login = async (form: LoginCredentials) => {
 
     return response.data;
   } catch (error) {
-    throw error;
+    throw getGeneralApiError(error);
   }
 };
 

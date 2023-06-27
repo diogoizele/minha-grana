@@ -5,9 +5,11 @@ export const Container = styled("section")(() => ({
   flexDirection: "column",
   flex: 1,
 
-  gap: "1.5rem",
+  gap: "0.5rem",
 
   height: "10px",
+
+  marginRight: "2px",
 }));
 
 export const PaperContainer = styled(Paper)(() => ({
@@ -20,4 +22,5 @@ export const PaperContainer = styled(Paper)(() => ({
 
 export const ContainerHeader = styled("header")(() => ({
   display: "flex",
+  minHeight: "3rem",
 }));

@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { VscDashboard } from "react-icons/vsc";
 import { IoIosOptions } from "react-icons/io";
 import { BiPurchaseTagAlt } from "react-icons/bi";
-import { useLocation } from "react-router-dom";
+import { GiReceiveMoney } from "react-icons/gi";
 
 import type { AppBarTabs } from "./appBar.types";
 import type { AppBarButtonProps } from "./appBarButton/appBarButton.types";
@@ -16,6 +17,10 @@ export function useAppBar() {
         return "Categorias";
       case "/purchases":
         return "Compras";
+      case "/expenses":
+        return "Despesas";
+      case "/incomes":
+        return "Receitas";
       case "/":
       default:
         return "Dashboard";
@@ -32,10 +37,11 @@ export function useAppBar() {
       path: "/",
       icon: VscDashboard,
     },
+
     {
-      title: "Categorias",
-      path: "/categories",
-      icon: IoIosOptions,
+      title: "Receitas",
+      path: "/incomes",
+      icon: GiReceiveMoney,
     },
     {
       title: "Compras",

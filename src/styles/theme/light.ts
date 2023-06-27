@@ -28,11 +28,21 @@ export const light = createTheme({
       default: "#dae6f0",
       paper: "#eef2f1",
       contrast: "#ffffff",
+      paperVariant: "#f2fbf7",
     },
   },
   typography: {
     allVariants: {
       color: "#232323",
+    },
+  },
+  components: {
+    MuiTableRow: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#af3551",
+        },
+      },
     },
   },
 });

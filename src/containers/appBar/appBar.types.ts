@@ -4,4 +4,9 @@ export type AppBarProps = {
   onToggle: () => void;
 };
 
-export type AppBarTabs = "Dashboard" | "Categorias" | "Compras";
+export type AppBarTabs =
+  | "Dashboard"
+  | "Categorias"
+  | "Compras"
+  | "Despesas"
+  | "Receitas";

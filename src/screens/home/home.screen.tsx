@@ -6,21 +6,8 @@ import { useAuthStore, useUserStore } from "stores";
 import { Button } from "@mui/material";
 
 export function HomeScreen() {
-  const { setUser, user } = useUserStore();
+  const { user } = useUserStore();
   const { setToken } = useAuthStore();
-
-  useEffect(() => {
-    getUser();
-  }, []);
-
-  const getUser = async () => {
-    try {
-      const user = await detailUser();
-      setUser(user);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   const handleLogout = () => {
     setToken(null);

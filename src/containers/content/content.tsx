@@ -16,7 +16,7 @@ export const Content = ({
         {headerElement ? (
           headerElement
         ) : (
-          <div className="flex justify-between w-screen">
+          <div className="flex justify-between items-center w-screen">
             <Typography variant="h3">{title}</Typography>
             <Button {...primaryAction} />
           </div>

@@ -18,5 +18,6 @@ declare module "@mui/material" {
 declare module "@mui/material/styles/createPalette" {
   interface TypeBackground {
     contrast: string;
+    paperVariant: string;
   }
 }

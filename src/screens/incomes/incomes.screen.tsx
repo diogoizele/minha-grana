@@ -13,13 +13,22 @@ import { incomeApi } from "api";
 import { Income } from "types";
 
 import { PapleContainer, TableHeadCell } from "./incomes.styles";
-import { IncomeCard, columns } from "./components/income-card.component";
+import { IncomeCard, IncomeModalForm, columns } from "./components";
 
 export function IncomesScreen() {
   const [incomes, setIncomes] = useState<Income[]>([]);
+  const [modalFormOpen, setModalFormOpen] = useState(false);
 
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
+
+  const handleModalFormOpen = () => {
+    setModalFormOpen(true);
+  };
+
+  const handleModalFormClose = () => {
+    setModalFormOpen(false);
+  };
 
   const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage);
@@ -49,9 +58,7 @@ export function IncomesScreen() {
         children: "Nova receita",
         variant: "contained",
         color: "primary",
-        onClick: () => {
-          alert("Nova receita");
-        },
+        onClick: handleModalFormOpen,
       }}
     >
       <PapleContainer>
@@ -90,6 +97,8 @@ export function IncomesScreen() {
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
       </PapleContainer>
+
+      <IncomeModalForm onClose={handleModalFormClose} open={modalFormOpen} />
     </Content>
   );
 }

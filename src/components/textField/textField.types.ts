@@ -4,7 +4,9 @@ import {
 } from "@mui/material";
 import { Control, RegisterOptions } from "react-hook-form";
 
-export type TextFieldProps = MUITextFieldProps & {
+export type TextFieldTypes = MUITextFieldProps["type"] | "money";
+
+export type TextFieldProps = Omit<MUITextFieldProps, "type"> & {
   name: string;
   label?: string;
   control: Control<any>;
@@ -13,4 +15,5 @@ export type TextFieldProps = MUITextFieldProps & {
     RegisterOptions<any, string>,
     "disabled" | "valueAsNumber" | "valueAsDate" | "setValueAs"
   >;
+  type?: TextFieldTypes;
 };

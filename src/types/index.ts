@@ -8,3 +8,4 @@ export { Pagination } from "./common/pagination.types";
 
 export { Frequency } from "./items/frequency.types";
 export { Income } from "./income/income.types";
+export { IncomeFormData } from "./income/income-form-data.types";
